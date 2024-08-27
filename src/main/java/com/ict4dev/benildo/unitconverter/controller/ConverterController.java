@@ -1,5 +1,6 @@
 package com.ict4dev.benildo.unitconverter.controller;
 
+import com.ict4dev.benildo.unitconverter.service.WeightService;
 import org.springframework.ui.Model;
 import com.ict4dev.benildo.unitconverter.model.Unit;
 import com.ict4dev.benildo.unitconverter.service.TemperatureService;
@@ -17,6 +18,13 @@ public class ConverterController {
 
     @GetMapping("/weight")
     public String Weight() {
+        return "weight";
+    }
+
+    @PostMapping("/weight")
+    public String weight(@ModelAttribute Unit unit, Model model) {
+        String result = WeightService.convertWeight(unit);
+        model.addAttribute("result", result);
         return "weight";
     }
 
