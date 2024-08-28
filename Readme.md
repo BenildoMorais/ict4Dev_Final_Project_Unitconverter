@@ -56,6 +56,12 @@ Follow these steps to configure and run the Application in your environment:
 3. Run the following command:
 
   ```shell
+  docker build -t unitconvert .
+  ```
+
+4. Run the following command:
+
+  ```shell
   docker run -p 8080:8080 unitconvert
   ```
 
