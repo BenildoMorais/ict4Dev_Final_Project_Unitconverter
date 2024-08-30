@@ -65,7 +65,7 @@ Follow these steps to configure and run the Application in your environment:
   docker run -p 8080:8080 unitconvert
   ```
 
-The application will be accessible at http://localhost:8000/
+The application will be accessible at http://localhost:8080/
 
 
 ## 🙏 conclusion:
