@@ -51,10 +51,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration><!-- Testing new Dependence-->
-                    <source>22</source>
-                    <target>22</target>
-                </configuration><!-- Testing new Dependence-->
             </plugin>
         </plugins>
     </build>
