@@ -1,8 +1,15 @@
-FROM openjdk:22-jdk
+FROM ubunto:latest AS build
+
+RUN apt-get update
+RUN apt-get install openjdk-22-jdk -y
+COPY . .
 
 RUN apt-get instal maven -y
 RUN mvn clean instal
 
-ARG JAR_FILE=/target/*.jar
-COPY --from=build ${JAR_FILE} app.jar
+FROM openjdk:22-jdk-slim
+
+EXPOSE 8080
+
+COPY --from=build /target/Unitconverter-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
